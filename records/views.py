@@ -24,6 +24,7 @@ class CourseCreateView(generics.CreateAPIView):
     queryset = Course.objects.all()
     serializer_class = CourseSerializer
     permission_classes = [IsAdmin]
+    
 
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
