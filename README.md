@@ -23,21 +23,25 @@ The system goes beyond CRUD by providing intelligent insights into student perfo
 ## 📊 Core Analytics Capabilities
 
 ### 🎓 Student-Level
-- Insights (average, best, weakest)  
-- Risk detection  
-- ML prediction  
-- Attendance trend  
+- Insights → Shows average performance and identifies strongest & weakest subjects  
+- Risk detection → Flags students likely to underperform based on score + attendance  
+- ML prediction → Uses machine learning to predict future academic risk  
+- Attendance trend → Shows consistency over time (weekly attendance %)  
+
+---
 
 ### 📚 Course-Level
-- Course statistics  
-- At-risk students  
-- Best students  
-- Attendance trend  
+- Course statistics → Average performance across all students in a course  
+- At-risk students → Students struggling in a specific course  
+- Best students → Top performers in that course  
+- Attendance trend → Engagement level of students taking the course  
+
+---
 
 ### 🏫 Global
-- Attendance trends  
-- Best students  
-- At-risk students  
+- Attendance trends → Overall system attendance pattern  
+- Best students → Top-performing students across all courses  
+- At-risk students → Students performing poorly overall  
 
 ---
 
@@ -45,26 +49,39 @@ The system goes beyond CRUD by providing intelligent insights into student perfo
 
 ### 🔐 Auth
 ```
-POST /api/auth/register/
-POST /api/auth/login/
-GET /api/auth/me/
+POST /api/auth/register/     // Register student or teacher
+POST /api/auth/login/        // Authenticate user and return JWT
+GET /api/auth/me/            // Get current logged-in user details
 ```
 
 ### 📚 Records
 ```
-GET /api/records/students/
-POST /api/records/courses/
-GET /api/records/courses/list/
-POST /api/records/scores/
-POST /api/records/attendance/
+GET /api/records/students/           // List all student profiles
+POST /api/records/courses/           // Create course (Admin only)
+GET /api/records/courses/list/       // List all courses
+POST /api/records/scores/            // Add student score (Teacher/Admin)
+POST /api/records/attendance/        // Record attendance (Teacher/Admin)
 ```
 
 ### 📊 Analytics
 ```
-GET /api/analytics/students/{id}/
-GET /api/analytics/courses/{course_name}/
-GET /api/analytics/overview/
+GET /api/analytics/students/{id}/          // Full student analysis (insights, risk, ML, trends)
+GET /api/analytics/courses/{course_name}/  // Course-level analytics
+GET /api/analytics/overview/               // Global analytics overview
 ```
+
+---
+
+## 📸 API Screenshots
+
+### 🎓 Student Analytics
+![Student Analytics](screenshots/student-analytics.png)
+
+### 📚 Course Analytics
+![Course Analytics](screenshots/course-analytics.png)
+
+### 🏫 Global Analytics
+![Global Analytics](screenshots/global-analytics.png)
 
 ---
 
